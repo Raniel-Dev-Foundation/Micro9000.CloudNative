@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>e1016b73-2b21-40b3-b99a-63e793652173</UserSecretsId>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="Scripts\" />
+		<Folder Include="Seed\" />
+		<Folder Include="Mock\Common\" />
+		<Folder Include="Mock\Dev\" />
+		<Folder Include="Mock\Uat\" />
+		<Folder Include="SchemaScripts\Shared\" />
+		<Folder Include="SchemaScripts\StoredProcedures\" />
+		<Folder Include="SchemaScripts\TVFs\" />
+		<Folder Include="SchemaScripts\Views\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Scripts\*.sql" />
+		<EmbeddedResource Include="Mock\Common\*.sql" />
+		<EmbeddedResource Include="Mock\Dev\*.sql" />
+		<EmbeddedResource Include="Mock\Uat\*.sql" />
+		<EmbeddedResource Include="Seed\*.sql" />
+		<EmbeddedResource Include="SchemaScripts\*.sql" />
+		<EmbeddedResource Include="SchemaScripts\Shared\*.sql" />
+		<EmbeddedResource Include="SchemaScripts\StoredProcedures\*.sql" />
+		<EmbeddedResource Include="SchemaScripts\TVFs\*.sql" />
+		<EmbeddedResource Include="SchemaScripts\Views\*.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="dbup-sqlserver" Version="5.0.37" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+		<PackageReference Include="Spectre.Console.Cli" Version="0.48.0" />
+	</ItemGroup>
+
+</Project>

@@ -7,11 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+// TODO: Move this to its own extension method
 builder.Services.AddDbContext<CloudNativeDbContext>(
     options =>
     {
-        var configuration = builder.Configuration.GetConnectionString("Micro9000_DbConnection_migration");
-        options.UseSqlServer(configuration);
+        var connectionString = builder.Configuration.GetConnectionString("Micro9000_DbConnection_migration");
+        options.UseSqlServer(connectionString);
     });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

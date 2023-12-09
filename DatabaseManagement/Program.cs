@@ -1,4 +1,4 @@
-﻿using DatabaseManagement.Commands;
+﻿using DatabaseManagement;
 using DatabaseManagement.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;

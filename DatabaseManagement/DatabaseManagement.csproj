@@ -9,6 +9,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
+		<Folder Include="Commands\" />
 		<Folder Include="Scripts\" />
 		<Folder Include="Seed\" />
 		<Folder Include="Mock\Common\" />

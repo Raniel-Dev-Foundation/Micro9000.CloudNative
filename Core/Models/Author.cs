@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Models;
 
-public class Author
+public class Author : Entity
 {
     public string? Name { get; set; }
 }

@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=yourStrong(!)Password
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql-server-data-2:/var/opt/mssql/data
+    networks:
+      - cloud_native_network
+
+networks:
+  cloud_native_network:
+    driver: bridge
+
+volumes:
+  sql-server-data-2:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: 'D:\SQLServerExpressContainerFiles'

@@ -12,7 +12,7 @@ HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 builder.Environment.ContentRootPath = Directory.GetCurrentDirectory();
 builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 builder.Configuration.AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: true);
-builder.Configuration.AddEnvironmentVariables(prefix: "Micro9000_");
+builder.Configuration.AddEnvironmentVariables();
 builder.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly(), true);
 
 var registrar = new TypeRegistrar(builder.Services);

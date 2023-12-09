@@ -26,7 +26,12 @@ internal sealed class MigrationCommand : Command<MigrationCommand.Settingns>
 
         [Description("Create mock data.")]
         [CommandOption("-m|--mock-data")]
+
+#if DEBUG
+        [DefaultValue(true)]
+#else
         [DefaultValue(false)]
+#endif
         public bool MockData { get; init; }
 
         [Description("Create seed data.")]

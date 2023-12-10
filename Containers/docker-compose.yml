@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   sql-server:
+    container_name: cloud_native_sql_server
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
       - ACCEPT_EULA=Y
@@ -9,16 +10,10 @@ services:
     ports:
       - "1433:1433"
     volumes:
-      - sql-server-data-2:/var/opt/mssql/data
-    networks:
-      - cloud_native_network
-
-networks:
-  cloud_native_network:
-    driver: bridge
+      - sql-server-data:/var/opt/mssql/data
 
 volumes:
-  sql-server-data-2:
+  sql-server-data:
     driver: local
     driver_opts:
       type: 'none'

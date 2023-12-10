@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
-	<UserSecretsId>e1016b73-2b21-40b3-b99a-63e793652173</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	 
 	<!--https://stackoverflow.com/questions/76394279/scaffold-dbcontext-culturenotfoundexception-only-the-invariant-culture-is-sup-->
@@ -13,6 +12,7 @@
 
 	<!--https://devblogs.microsoft.com/nuget/enable-repeatable-package-restores-using-a-lock-file/ -->
 	<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+	<UserSecretsId>e41d450a-9ee7-4ba5-8072-121e24f6603d</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

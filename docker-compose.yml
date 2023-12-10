@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  sql-server:
+    container_name: cloud_native_sql_server
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=yourStrong(!)Password
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql-server-data:/var/opt/mssql/data
+
+  database-migration:
+    build:
+      context: .
+      dockerfile: ./DatabaseManagement/Dockerfile
+    container_name: database-migration-cli
+    depends_on:
+      - sql-server
+    environment:
+      - ENVIRONMENT=Dev
+      - ConnectionStrings__Micro9000_DbConnection_migration=Server=sql-server,1433;Database=Micro9000CloundNativeDB;User Id=SA;Password=yourStrong(!)Password;Trusted_Connection=False;TrustServerCertificate=True
+
+  backend-api:
+    build:
+      context: .
+      dockerfile: ./BackendAPI/Dockerfile
+    container_name: backend-api
+    ports:
+      - 8080: 8080
+      - 8081: 8081
+    depends_on:
+      - sql-server
+      - database-migration
+    environment:
+      - ConnectionStrings__Micro9000_DbConnection_migration=Server=sql-server,1433;Database=Micro9000CloundNativeDB;User Id=SA;Password=yourStrong(!)Password;Trusted_Connection=False;TrustServerCertificate=True
+
+volumes:
+  sql-server-data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: 'D:\SQLServerExpressContainerFiles'

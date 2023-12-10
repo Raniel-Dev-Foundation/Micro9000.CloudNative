@@ -34,3 +34,37 @@ Now find the user userssecrets file by navigating to  **%appdata%/microsoft/user
 
 Open the folder that matches your user secret GUID.
 You can edit the secrets by modifying the **secrets.json** file. In this file you need to configure the password of the developer certificate:
+
+# docker-compose commands
+
+Detached mode
+    
+    docker-compose up -d
+
+Build images for us if they do not already exists, once iamges exists, it will keep using those images
+    
+    docker-compose up
+
+Only build the images
+
+    docker-compose build
+
+Build and then start all of the containers
+
+    docker-compose up --build
+
+This will force no caching of the image layers to will recreate each layer again. I’ve found this useful when testing a docker-compose file change to ensure all steps are working as expected.
+
+    --no-cache
+
+Stop all of the containers defined in the docker-compose file
+
+    docker-compose stop
+
+Cleanup the stopped containers
+
+    docker-compose rm
+
+Stop and then remove the containers
+
+    docker-compose down

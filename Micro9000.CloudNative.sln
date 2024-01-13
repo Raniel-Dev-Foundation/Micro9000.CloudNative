@@ -3,16 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAPI", "BackendAPI\BackendAPI.csproj", "{3C6D9F3C-32F7-4C05-A3B1-D6A07FC4F195}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAPI", "BackendAPI\BackendAPI.csproj", "{3C6D9F3C-32F7-4C05-A3B1-D6A07FC4F195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{459E8F3F-CEAB-4C11-AA6B-DEE822576E20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{459E8F3F-CEAB-4C11-AA6B-DEE822576E20}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97D1F817-2006-401F-9F13-8368299B9E11}"
 	ProjectSection(SolutionItems) = preProject
 		Containers\docker-compose.yml = Containers\docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseManagement", "DatabaseManagement\DatabaseManagement.csproj", "{EAF9AF51-D34F-472F-BC82-3FE64FEE1204}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseManagement", "DatabaseManagement\DatabaseManagement.csproj", "{EAF9AF51-D34F-472F-BC82-3FE64FEE1204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundProcessing", "BackgroundProcessing\BackgroundProcessing.csproj", "{950537D9-BA83-4279-A8B2-25E7E8E62EF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{EAF9AF51-D34F-472F-BC82-3FE64FEE1204}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF9AF51-D34F-472F-BC82-3FE64FEE1204}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAF9AF51-D34F-472F-BC82-3FE64FEE1204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{950537D9-BA83-4279-A8B2-25E7E8E62EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950537D9-BA83-4279-A8B2-25E7E8E62EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950537D9-BA83-4279-A8B2-25E7E8E62EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950537D9-BA83-4279-A8B2-25E7E8E62EF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

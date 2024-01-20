@@ -23,16 +23,16 @@ internal static class SchemaMigrator
                 s => s == dropProgrammabilityObjectsScript,
                 new SqlScriptOptions { RunGroupOrder = 0 })
             .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly(),
-                s => s == sharedFolder,
+                s => s.StartsWith(sharedFolder),
                 new SqlScriptOptions { RunGroupOrder = 1 })
             .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly(),
-                s => s == tvfFolder,
+                s => s.StartsWith(tvfFolder),
                 new SqlScriptOptions { RunGroupOrder = 2 })
             .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly(),
-                s => s == viewsFolder,
+                s => s.StartsWith(viewsFolder),
                 new SqlScriptOptions { RunGroupOrder = 2 })
             .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly(),
-                s => s == storedProceduresFolder,
+                s => s.StartsWith(storedProceduresFolder),
                 new SqlScriptOptions { RunGroupOrder = 3 })
             .LogToConsole()
             .Build();

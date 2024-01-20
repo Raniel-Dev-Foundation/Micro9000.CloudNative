@@ -1,0 +1,4 @@
+CREATE PROCEDURE GetAllUsers
+AS
+SELECT * FROM [Users]
+GO
